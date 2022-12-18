@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>QR</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <qrcode style="text-align: center;" [qrdata]="qrCodeString" [width]="256" [errorCorrectionLevel]="'H'"></qrcode>
+  <!-- <img style="background-color: white;" src="/assets/qrr.png"> -->
+  <p style="text-align: center;">Escanea el QR :)</p>
+  <br>
+  Asignatura: {{ramo}}<br>
+  Fecha: {{date2}} <br>
+  Profesor: {{profe}}<br>
+  Id seccion: {{seccion}}
+
+
+</ion-content>

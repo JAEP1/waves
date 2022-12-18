@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <!-- <ion-toolbar>
+    <ion-title>
+      Presente Duoc
+    </ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<!-- /////////////////////LOGIN NATIVO///////////////////////// -->
+<!-- <ion-content [fullscreen]="true" class="background"> -->
+  <!-- <div id="container">
+    <ion-item>
+      <center><img src="assets/logowaves.png"></center>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input [(ngModel)]="login.Usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="login.Clave"></ion-input>
+    </ion-item> -->
+    <!-- <ion-button matRipple  style="margin-top:20px ;" color="tertiary"shape="round" (click)="ingresar()"> Ingresar</ion-button> -->
+    <!-- <ion-button matRipple  style="margin-top:20px ;" color="tertiary"shape="round" [routerLink]="'/perfil'"> Test</ion-button> -->
+   
+  <!-- </div> -->
+  
+<!-- </ion-content> -->
+<!-- ///////////////////////////////////////////////////////// -->
+
+<!-- /////////////LOGIN JSON////////////////////////////////////////////// -->
+<ion-content [fullscreen]="true" class="background">
+  <div id="container">
+    <ion-item>
+      <center><img src="assets/logowaves.png"></center>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input [(ngModel)]="login.Usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="login.Clave"></ion-input>
+    </ion-item>
+    <!-- <ion-button color="tertiary"shape="round" (click)="pasarPagina()" > Ingresar</ion-button> -->
+    <!-- <ion-button matRipple  style="margin-top:20px ;" color="tertiary"shape="round" (click)="ingresarJson()"> JSON</ion-button> -->
+    <ion-button matRipple  style="margin-top:20px ;" color="tertiary"shape="round" (click)="ingresar()"> Ingresar</ion-button>
+   
+    <!-- <ion-button matRipple  style="margin-top:20px ;" color="tertiary"shape="round" [routerLink]="'/perfil'"> Test</ion-button> -->
+   <span style="color: black;"><br>
+ <!-- {{date2}}<br>
+  {{dateTest}} -->
+</span>
+  
+  </div>
+  
+</ion-content>
+

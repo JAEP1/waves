@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Editar Perfil</ion-title>
+      <ion-back-button slot="start"></ion-back-button>
+    </ion-toolbar>
+
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre:</ion-label>
+        <ion-input placeholder="{{nombre1}}" [(ngModel)]="nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellido:</ion-label>
+        <ion-input  placeholder="{{apellido1}}" [(ngModel)]="apellido"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Correo:</ion-label>
+        <ion-input  placeholder="{{correo1}}" type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Rut:</ion-label>
+        <ion-input  placeholder="{{rut1}}" [(ngModel)]="rut"></ion-input>
+      </ion-item>
+     
+
+      <center><ion-button color="tertiary" shape="round" (click)="editar()">Guardar</ion-button></center>
+
+    </ion-list>
+    
+  </ion-header>
+
+  <ion-content>
+
+    
+
+  </ion-content>

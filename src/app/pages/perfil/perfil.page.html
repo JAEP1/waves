@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-back-button defaultHref="home" style="margin-right: 10px;" color="danger" text="" icon="exit-outline"></ion-back-button>
+      </ion-buttons>
+    <ion-buttons   slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" >
+  <ion-card class="background" >
+    <center><img src="{{foto}}" *ngIf="foto" height="100px" width="100px" ></center>
+    <center><img src="{{image}}" *ngIf="image" height="100px" width="100px" ></center>
+    <ion-card-header>
+      <ion-card-subtitle>Perfil: {{nomUser}}</ion-card-subtitle>
+      <ion-card-title style="padding-top: 40px; padding-bottom: 40px;" >{{nombre}} {{apellido}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Email: {{correo}} <br>
+      Rut: {{rut}} <br>
+      
+    </ion-card-content>
+    
+  </ion-card>
+  <center> <ion-button (click)="fotoGaleria()" style="text-align: center;" >Cambiar foto</ion-button></center>
+  <center> <ion-button (click)="guardarFoto()"  style="text-align: center;" >Guardar foto</ion-button></center>
+  <center> <ion-button  (click)="edit()" style="text-align: center;" >Editar</ion-button></center>
+  <ion-accordion-group #accordionGroup>
+    
+    <ion-accordion style="padding-bottom: 30px;" value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Modificar Contraseña</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content"><ion-label position="floating">Contraseña:</ion-label>
+        <ion-input [(ngModel)]="contra1"></ion-input>
+        <ion-label position="floating">Confirmar:</ion-label>
+          <ion-input [(ngModel)]="contra2"></ion-input>
+        
+          <ion-label position="floating">Codigo:</ion-label>
+        <ion-input [(ngModel)]="codigoc"></ion-input>
+        <center><ion-button matRipple  color="tertiary"shape="round" (click)="openEmail()"> Obtener codigo</ion-button></center>
+        <center><ion-button matRipple  color="tertiary"shape="round" (click)="guardar()"> Guardar</ion-button></center></div>
+    </ion-accordion>
+  </ion-accordion-group>
+  
+  <center><ion-button *ngIf=" id_rol  != '1'" style="text-align: center;" matRipple (click)="scan()">Escanear</ion-button>
+  <ion-button *ngIf=" id_rol  != '1'" style="text-align: center;" matRipple (click)="asistir()">Registrarse</ion-button></center>
+  <h5 style="color: black;" *ngIf="code">Resultado Escaneo: {{code}}</h5>
+ <ion-item *ngFor=" let it of seccion">
+  <div>
+    
+    <ion-accordion-group #accordionGroup>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label (click)="ti(it)">{{ it.nombreRamo }}</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <center>
+            <center><ion-button *ngIf=" id_rol  == '1'" style="text-align: center;" matRipple (click)="qr()" style="width: 100px;" (click)="botonIr()" >QR</ion-button></center>
+            <!-- <center><ion-button *ngIf=" nomUser  == 'v.rosendo'"style="text-align: center;" matRipple (click)="ti(it)" style="width: 100px;" >Asistentes</ion-button></center> -->
+          <!-- <ion-button *ngIf=" id_rol  != '1'" style="text-align: center;" matRipple (click)="scan()">Escanear</ion-button>
+          <ion-button *ngIf=" id_rol  != '1'" style="text-align: center;" matRipple (click)="asistir()">Registrarse</ion-button> -->
+         
+          <!-- <h5 *ngIf="code">Resultado Escaneo: {{code}}</h5> -->
+          <!-- <ion-button *ngIf=" nomUser  != 'v.rosendo'" matRipple color="success" (click)="presentAlert()" >Asistencias</ion-button> -->
+        </center>
+          <div *ngIf=" id_rol  == '1'">
+          <ion-list *ngFor=" let i of asistencia"  >
+            <ion-item *ngIf=" nombreSeccion == i.seccion">
+              <ion-label >{{ i.alumno }}  {{ i.fecha }}</ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div *ngIf=" id_rol  != '1 '">
+          <ion-list *ngFor=" let i of asistencia"  >
+          <div *ngIf=" nombreSeccion == i.seccion">
+            <ion-item *ngIf=" i.userId  == userId">
+              <ion-label >{{ i.alumno }}  {{ i.fecha }}</ion-label>
+            </ion-item>
+          </div>
+          </ion-list>
+        </div>
+        </div>
+
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+</ion-item>
+</ion-content>

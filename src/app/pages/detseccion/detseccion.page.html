@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background1">
+  <!-- <ion-accordion-group>
+    <ion-accordion *ngFor="let c of componentes">
+
+      <ion-item  slot="header" color="light">
+        <ion-label>{{c.nombre}}</ion-label>
+      </ion-item>
+      <div  class="ion-padding" slot="content">
+        <ion-button style="padding-left: 10px;" [routerLink]="'/asistentes'"  >Reporte</ion-button>
+        <ion-button color="success" [routerLink]="'/qr'" >Registrar</ion-button>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group> -->
+  <!-- <ion-accordion-group>
+    <ion-accordion *ngFor="let c of clases">
+
+      <ion-item  slot="header" color="light">
+        <ion-label>{{c.name}}</ion-label>
+      </ion-item>
+      <div  class="ion-padding" slot="content">
+        <ion-button style="padding-left: 10px;" [routerLink]="'/asistentes'"  >Reporte</ion-button>
+        <ion-button color="success" [routerLink]="'/qr'" >Registrar</ion-button>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group> -->
+  <ion-accordion-group>
+    <ion-accordion >
+
+      <ion-item  slot="header" color="light">
+        <ion-label>Clase</ion-label>
+      </ion-item>
+      <div  class="ion-padding" slot="content">
+        <ion-button style="padding-left: 10px;" >Reporte</ion-button>
+        <ion-button color="success" [routerLink]="'/qr'" >Registrar</ion-button>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <!-- <div style="padding-left: 185px; padding-top: 30px; padding-bottom: 80px;" >
+      <ion-fab-button slot="fixed" color="success" (click)="add(addClases)" >
+        <ion-icon  name="add"></ion-icon>
+    </ion-fab-button>
+</div> -->
+
+<ion-fab style="padding-left: 185px; padding-top: 30px; padding-bottom: 80px;">
+  <ion-fab-button  color="success" (click)="add(addClases)" >
+    <ion-icon  name="add"></ion-icon>
+</ion-fab-button>
+</ion-fab>
+</ion-content>
+<ion-footer></ion-footer>
